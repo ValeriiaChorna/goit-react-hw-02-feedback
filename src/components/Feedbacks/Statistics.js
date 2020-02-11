@@ -1,4 +1,5 @@
 import React from 'react';
+import T from 'prop-types';
 
 export default function Statistics({
   good,
@@ -16,4 +17,12 @@ export default function Statistics({
       <p>Positive feedback: {positivePercentage}%</p>
     </>
   );
+}
+
+Statistics.propTypes = {
+  good: T.number.isRequired,
+  neutral: T.number.isRequired,
+  bad: T.number.isRequired,
+  total: T.number.isRequired,
+  positivePercentage: T.number.isRequired,
 }
