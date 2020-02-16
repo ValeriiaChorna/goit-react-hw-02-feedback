@@ -5,10 +5,6 @@ import Statistics from './Statistics';
 import Notification from './Notification';
 
 class Feedbacks extends Component {
-  static defaultProps = {};
-
-  static propTypes = {};
-
   state = {
     good: 0,
     neutral: 0,
@@ -23,8 +19,7 @@ class Feedbacks extends Component {
   };
 
   countTotalFeedback = () => {
-    const total = this.state.good + this.state.neutral + this.state.bad;
-    return total;
+    return this.state.good + this.state.neutral + this.state.bad;
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -38,7 +33,7 @@ class Feedbacks extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
+      <>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -58,7 +53,7 @@ class Feedbacks extends Component {
         ) : (
           <Notification message={'No feedback given'} />
         )}
-      </div>
+      </>
     );
   }
 }

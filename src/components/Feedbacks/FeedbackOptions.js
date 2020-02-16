@@ -4,9 +4,9 @@ import T from 'prop-types';
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <>
-      {options.map(e => (
-        <button type="button" name={e} onClick={onLeaveFeedback}>
-          {e.toUpperCase()}
+      {options.map(option => (
+        <button type="button" key={option} name={option} onClick={onLeaveFeedback}>
+          {option.toUpperCase()}
         </button>
       ))}
     </>
